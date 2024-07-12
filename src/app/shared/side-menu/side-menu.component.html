@@ -1,0 +1,30 @@
+<ion-menu contentId="main-content">
+  <ion-content class="ion-padding">
+    <div class="head-menu">
+      <img class="logo" src="../../assets/img/logo-be.png" alt="logo" />
+      <ion-menu-toggle>
+        <button class="close-button">
+          <ion-icon name="close-circle-outline"></ion-icon>
+        </button>
+      </ion-menu-toggle>
+    </div>
+
+    <div class="container-menu">
+      <div *ngFor="let item of routesMenu" class="menu-item">
+        <ion-icon
+          [style.color]="
+            location.path() === item.path ? 'var(--primary)' : 'var(--white)'
+          "
+          [name]="item.icon"
+        ></ion-icon>
+        <a
+          [style.color]="
+            location.path() === item.path ? 'var(--primary)' : 'var(--white)'
+          "
+          (click)="closeMenu(item.path)"
+          >{{ item.title }}</a
+        >
+      </div>
+    </div>
+  </ion-content>
+</ion-menu>

@@ -1,0 +1,46 @@
+<app-side-menu />
+<div class="shape" id="main-content">
+  <div class="head">
+    <ion-menu-toggle>
+      <button class="menu-button">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-menu-toggle>
+
+    <img class="logo" src="../../assets/img/logo-be.png" alt="logo" />
+
+    <button class="notification-button">
+      <ion-icon name="notifications"></ion-icon>
+      <div *ngIf="notification" class="circle-notification"></div>
+    </button>
+  </div>
+
+  <div class="user">
+    <img
+      src="https://images.pexels.com/photos/428364/pexels-photo-428364.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      alt="user"
+    />
+    <div>
+      <p class="username">Leonardo Santos</p>
+      <p class="level">Nível Roxo</p>
+    </div>
+  </div>
+
+  <div class="container-buttons">
+    <div class="navigate-buttons">
+      <button>
+        <div class="icon-circle">
+          <ion-icon name="accessibility-sharp"></ion-icon>
+        </div>
+        <p>MEU CORPO</p>
+      </button>
+
+      <button>
+        <div class="icon-circle">
+          <ion-icon name="trophy"></ion-icon>
+        </div>
+        <p>OBJETIVOS E CONQUISTAS</p>
+      </button>
+    </div>
+  </div>
+</div>

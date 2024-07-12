@@ -1,0 +1,64 @@
+<ion-content fullscreen>
+  <app-loading *ngIf="loading" />
+  <app-header />
+  <div class="container-carousel">
+    <div *ngFor="let category of categories$ | async" class="content-carousel">
+      <div class="container-label">
+        <p class="label">{{ category.category }}</p>
+        <div *ngIf="category.isNew" class="badge-new">
+          <p>NOVO</p>
+        </div>
+        <ion-icon
+          *ngIf="category.category === 'PERSONAL ONLINE'"
+          name="add-circle-outline"
+        ></ion-icon>
+      </div>
+
+      <div class="container-items">
+        <div *ngIf="category.canCreate" class="item">
+          <img
+            class="bg-item"
+            src="https://images.pexels.com/photos/1552252/pexels-photo-1552252.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="Imagem de trinamento"
+          />
+          <div class="overlay">
+            <ion-icon name="add-circle-outline"></ion-icon>
+            <div>
+              <p>NOVO</p>
+              <p>TREINO</p>
+            </div>
+          </div>
+        </div>
+
+        <div *ngFor="let item of category.items" class="item">
+          <img
+            class="bg-item"
+            [src]="item.imageUrl"
+            alt="Imagem de trinamento"
+          />
+          <div class="overlay"></div>
+          <div class="bottom-item-content">
+            <p *ngIf="item.hasStarted" class="continue-text">
+              Continuar treinando
+            </p>
+            <p class="title">{{item.title}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="base-content">
+      <p class="label-content">CONTEÚDOS</p>
+
+      <div class="container-items-content">
+        <div class="item-content">
+          <div class="box"></div>
+        </div>
+
+        <div class="item-content">
+          <div class="box"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
